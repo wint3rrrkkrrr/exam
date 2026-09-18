@@ -1,4 +1,5 @@
 export * from './m5EnglishQuestionsData';
+export * from './questionsData';
 export * from './biologyQuestionsData';
 export * from './historyQuestionsData';
 export * from './mathQuestionsData';
@@ -9,4 +10,3 @@ export * from './musicQuestions';
 export * from './subjectsData';
 export * from './subjectGuides';
 export * from './grammarGuide';
-export * from './m5EnglishQuestionsData';

@@ -8,5 +8,3 @@ export const m5EnglishQuestions: Question[] = [
   ...m5EnglishQuestionsPart2,
   ...m5EnglishQuestionsPart3
 ];
-
-export const allQuestions: Question[] = m5EnglishQuestions;
