@@ -1,0 +1,21 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow read/write access to all collections for our school quiz prep hub
+    match /users/{username} {
+      allow read, write: if true;
+    }
+    match /scores/{scoreId} {
+      allow read, write: if true;
+    }
+    match /profiles/{username} {
+      allow read, write: if true;
+    }
+    match /friendRequests/{requestId} {
+      allow read, write: if true;
+    }
+    match /chatMessages/{messageId} {
+      allow read, write: if true;
+    }
+  }
+}

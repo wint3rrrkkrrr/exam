@@ -1,0 +1,97 @@
+{
+  "entities": {
+    "RegisteredUser": {
+      "title": "RegisteredUser",
+      "description": "Information about registered users",
+      "type": "object",
+      "properties": {
+        "username": { "type": "string" },
+        "joined_at": { "type": "string" },
+        "last_active": { "type": "string" },
+        "device_info": { "type": "string" }
+      },
+      "required": ["username", "joined_at", "last_active"]
+    },
+    "UserScoreRecord": {
+      "title": "UserScoreRecord",
+      "description": "Records of quiz score submissions",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "username": { "type": "string" },
+        "subject_id": { "type": "string" },
+        "subject_name": { "type": "string" },
+        "score": { "type": "integer" },
+        "max_questions": { "type": "integer" },
+        "streak": { "type": "integer" },
+        "created_at": { "type": "string" },
+        "device_info": { "type": "string" }
+      },
+      "required": ["id", "username", "subject_id", "score", "max_questions", "created_at"]
+    },
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profiles containing avatar and bio",
+      "type": "object",
+      "properties": {
+        "username": { "type": "string" },
+        "avatar": { "type": "string" },
+        "bio": { "type": "string" },
+        "joined_at": { "type": "string" },
+        "last_active": { "type": "string" },
+        "device_info": { "type": "string" }
+      },
+      "required": ["username", "avatar", "joined_at", "last_active"]
+    },
+    "FriendRequest": {
+      "title": "FriendRequest",
+      "description": "Friend request tracking",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "fromUsername": { "type": "string" },
+        "toUsername": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "accepted", "rejected"] }
+      },
+      "required": ["id", "fromUsername", "toUsername", "timestamp", "status"]
+    },
+    "ChatMessage": {
+      "title": "ChatMessage",
+      "description": "Global or direct chat message",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "sender": { "type": "string" },
+        "recipient": { "type": "string" },
+        "text": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "isGlobal": { "type": "boolean" },
+        "avatar": { "type": "string" }
+      },
+      "required": ["id", "sender", "text", "timestamp", "isGlobal"]
+    }
+  },
+  "firestore": {
+    "/users/{username}": {
+      "schema": { "$ref": "#/entities/RegisteredUser" },
+      "description": "Registered users by username"
+    },
+    "/scores/{scoreId}": {
+      "schema": { "$ref": "#/entities/UserScoreRecord" },
+      "description": "Submitted scores"
+    },
+    "/profiles/{username}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "User custom profiles"
+    },
+    "/friendRequests/{requestId}": {
+      "schema": { "$ref": "#/entities/FriendRequest" },
+      "description": "Sent friend requests"
+    },
+    "/chatMessages/{messageId}": {
+      "schema": { "$ref": "#/entities/ChatMessage" },
+      "description": "Global and direct chat messages"
+    }
+  }
+}
