@@ -15,7 +15,7 @@ import { AdminModal } from './components/AdminModal';
 import { UserProfileModal } from './components/UserProfileModal';
 import { FloatingChatWidget } from './components/FloatingChatWidget';
 import { supabaseSim, syncWithServer } from './utils/supabaseSim';
-import { allQuestions } from './data/questionsData';
+import { allQuestions } from './data/m5EnglishQuestionsData';
 import { biologyQuestions } from './data/biologyQuestionsData';
 import { historyQuestions } from './data/historyQuestionsData';
 import { mathQuestions } from './data/mathQuestionsData';
