@@ -15,15 +15,17 @@ import { AdminModal } from './components/AdminModal';
 import { UserProfileModal } from './components/UserProfileModal';
 import { FloatingChatWidget } from './components/FloatingChatWidget';
 import { supabaseSim, syncWithServer } from './utils/supabaseSim';
-import { allQuestions } from './data/m5EnglishQuestionsData';
-import { biologyQuestions } from './data/biologyQuestionsData';
-import { historyQuestions } from './data/historyQuestionsData';
-import { mathQuestions } from './data/mathQuestionsData';
-import { cQuestions } from './data/cQuestionsData';
-import { physicsQuestions } from './data/physicsQuestionsData';
-import { englishSpeakingQuestions } from './data/englishSpeakingQuestions';
-import { musicQuestions } from './data/musicQuestions';
-import { subjectsList } from './data/subjectsData';
+import {
+  allQuestions,
+  biologyQuestions,
+  historyQuestions,
+  mathQuestions,
+  cQuestions,
+  physicsQuestions,
+  englishSpeakingQuestions,
+  musicQuestions,
+  subjectsList,
+} from './data';
 import { Question, QuizViewMode, CategoryStat, ThemeMode, CompletedQuestionRecord } from './types';
 import { 
   AlertCircle, 
